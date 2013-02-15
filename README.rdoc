@@ -140,6 +140,7 @@ Results use models' partials.
     http://desolate-journey-7350.herokuapp.com/
 
 ==TODO
+- Creating a full featured booking system which could use everybody for free!!
 - Updating room model
 - Updating host model
 - Paginate results
