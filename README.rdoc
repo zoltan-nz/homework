@@ -16,13 +16,31 @@ Gemfile:
 
 GitIgnore update.
 
-Sass as default template.
+Sass as default template. (config/application.rb -> config.sass.preferred_syntax = :sass)
 
 Model branch:
 - rails g annotate_models:install
 - rails g model host name:string address:text
 - rails g model room host_id:integer capacity:integer
 - rails g model booking room_id:integer start_date:date end_date:date number_of_guests:integer
+
+---------------------------------------------
+| HOST      | ROOM      | BOOKING           |
+---------------------------------------------
+| id        | id        | id                |
+| name      | host_id   | start_date        |
+| address   | capacity  | end_date          |
+|           |           | number_of guests  |
+|           |           | room_id           |
+---------------------------------------------
+
+Indexes: host.name, room.host_id, booking.room_id, booking.start_date, booking.end_date
+
+Associations:
+host.id -> room.host_id (1:N)
+room.id -> booking.room_id (1:N)
+
+Default scope settings: order
 
 ==========================
 

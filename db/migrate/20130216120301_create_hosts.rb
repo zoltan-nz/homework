@@ -6,5 +6,7 @@ class CreateHosts < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :hosts, :name
   end
 end

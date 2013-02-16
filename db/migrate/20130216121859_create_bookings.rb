@@ -8,5 +8,7 @@ class CreateBookings < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :bookings, [:room_id, :start_date, :end_date]
   end
 end

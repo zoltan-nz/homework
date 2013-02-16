@@ -6,5 +6,7 @@ class CreateRooms < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :rooms, :host_id
   end
 end
