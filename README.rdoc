@@ -6,6 +6,7 @@ A test application which manage hosts, rooms and bookings.
 
 ==========================
 
+===
 Gemfile:
 - haml support added
 - puma support added
@@ -47,8 +48,7 @@ Import data in production environment:
 (({rake import RAILS_ENV=production}))
 
 
-==========================
-
+===
 TODO
 - Importing csv files with rake
 - Creating controllers and views for search
