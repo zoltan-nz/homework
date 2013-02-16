@@ -18,21 +18,12 @@ GitIgnore update.
 
 Sass as default template. (config/application.rb -> config.sass.preferred_syntax = :sass)
 
-Model branch:
+===
+Model branch
 - rails g annotate_models:install
 - rails g model host name:string address:text
 - rails g model room host_id:integer capacity:integer
 - rails g model booking room_id:integer start_date:date end_date:date number_of_guests:integer
-
----------------------------------------------
-| HOST      | ROOM      | BOOKING           |
----------------------------------------------
-| id        | id        | id                |
-| name      | host_id   | start_date        |
-| address   | capacity  | end_date          |
-|           |           | number_of guests  |
-|           |           | room_id           |
----------------------------------------------
 
 Indexes: host.name, room.host_id, booking.room_id, booking.start_date, booking.end_date
 
@@ -42,10 +33,23 @@ room.id -> booking.room_id (1:N)
 
 Default scope settings: order
 
+===
+Rake_csv_import branch
+
+- Copy csv files in db folder, add it to .gitignore.
+- Rake task in /lib/tasks/import.rake
+- Run "rake import"
+- Run this import process only once in an environment.
+Examples:
+Import data in development environment:
+(({rake import RAILS_ENV=development}))
+Import data in production environment:
+(({rake import RAILS_ENV=production}))
+
+
 ==========================
 
 TODO
-- Building models
 - Importing csv files with rake
 - Creating controllers and views for search
 - Paginate results

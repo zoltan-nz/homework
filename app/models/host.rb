@@ -6,5 +6,5 @@ class Host < ActiveRecord::Base
   validates :address, presence: true
   validates :name, presence: true
 
-  default_scope order: 'hosts.name DESC'
+  default_scope order: 'hosts.name ASC'
 end

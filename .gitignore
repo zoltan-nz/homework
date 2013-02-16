@@ -22,3 +22,6 @@
 
 # TODO folder from doc
 /doc/TODO
+
+#Seed data files
+/db/*.csv
