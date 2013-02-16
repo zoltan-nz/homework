@@ -4,6 +4,8 @@ A test application which manage hosts, rooms and bookings.
 
 == Comments
 
+==========================
+
 Gemfile:
 - haml support added
 - puma support added
@@ -15,6 +17,14 @@ Gemfile:
 GitIgnore update.
 
 Sass as default template.
+
+Model branch:
+- rails g annotate_models:install
+- rails g model host name:string address:text
+- rails g model room host_id:integer capacity:integer
+- rails g model booking room_id:integer start_date:date end_date:date number_of_guests:integer
+
+==========================
 
 TODO
 - Building models
