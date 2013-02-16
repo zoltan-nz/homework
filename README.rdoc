@@ -48,8 +48,8 @@ Import data in production environment:
 
 
 ==TODO
-- Importing csv files with rake
-- Creating controllers and views for search
+- Creating model, controller and views for search
 - Paginate results
 - Polishing documentation
+- Deploying to Heroku
 - Further tweaking
