@@ -1,0 +1,7 @@
+=semantic_form_for @search do |form|
+  =form.inputs do
+    =form.input :s_date, label: "Start date:", as: :string
+    =form.input :e_date, label: "End date:", as: :string
+    =form.input :n_guests, label: "Number of guests:"
+  =form.actions do
+    =form.action :submit

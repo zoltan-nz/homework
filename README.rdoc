@@ -46,6 +46,10 @@ Import data in production environment:
 
   rake import RAILS_ENV=production
 
+===Search form
+
+  rails g model search start_date:date end_date:date number_of_guests:integer
+  rails g controller searches
 
 ==TODO
 - Creating model, controller and views for search

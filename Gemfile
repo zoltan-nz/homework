@@ -8,6 +8,9 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
 
+#form builder
+gem 'formtastic'
+gem 'simple_form'
 
 #group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -23,10 +26,11 @@ group :development, :test do
   #add a comment summarizing the current schema
   gem 'annotate'
 
-  #simple_form support for form building in views
-  gem 'simple_form'
-
   #more detailed error message
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  #for fancy console
+  gem 'awesome_print'
+  gem 'hirb'
 end

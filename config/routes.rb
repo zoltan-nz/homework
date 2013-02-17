@@ -1,4 +1,9 @@
 Homework::Application.routes.draw do
+  get "searches/index"
+
+  root :to => 'searches#index'
+  resources :searches
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

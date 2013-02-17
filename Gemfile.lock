@@ -31,10 +31,12 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
-    better_errors (0.5.0)
+    awesome_print (1.1.0)
+    better_errors (0.6.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.6.8)
+    binding_of_caller (0.7.1)
+      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -45,6 +47,7 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     columnize (0.3.6)
+    debug_inspector (0.0.2)
     debugger (1.3.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
@@ -55,13 +58,17 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    haml (3.1.8)
-    haml-rails (0.3.5)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
+    haml (4.0.0)
+      tilt
+    haml-rails (0.4)
       actionpack (>= 3.1, < 4.1)
       activesupport (>= 3.1, < 4.1)
-      haml (~> 3.1)
+      haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.1)
+    hirb (0.7.1)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -73,7 +80,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.21)
-    multi_json (1.6.0)
+    multi_json (1.6.1)
     polyglot (0.3.3)
     puma (1.6.3)
       rack (~> 1.2)
@@ -131,12 +138,15 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  awesome_print
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
   debugger
+  formtastic
   haml
   haml-rails
+  hirb
   jquery-rails
   puma
   rails (= 3.2.12)

@@ -1,0 +1,9 @@
+-#=render 'search_form'
+
+
+%h1 Search Results
+%p Start_date: #{@search.s_date}
+%p End_date: #{@search.e_date}
+%p Number_of_guests: #{@search.n_guests}
+
+=render @search.results
