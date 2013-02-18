@@ -25,3 +25,6 @@
 
 #Seed data files
 #/db/*.csv
+
+#Sass-cache
+/.sass-cache
