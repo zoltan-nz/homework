@@ -34,4 +34,7 @@ Homework::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Sass is default
+  config.sass.preferred_syntax = :sass
 end

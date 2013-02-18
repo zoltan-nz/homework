@@ -114,9 +114,6 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    simple_form (2.0.4)
-      actionpack (~> 3.0)
-      activemodel (~> 3.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -132,6 +129,7 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    will_paginate (3.0.4)
 
 PLATFORMS
   x86-mingw32
@@ -141,7 +139,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
-  coffee-rails (~> 3.2.1)
+  coffee-rails
   debugger
   formtastic
   haml
@@ -149,8 +147,8 @@ DEPENDENCIES
   hirb
   jquery-rails
   puma
-  rails (= 3.2.12)
-  sass-rails (~> 3.2.3)
-  simple_form
-  sqlite3 (~> 1.3.5)
-  uglifier (>= 1.0.3)
+  rails
+  sass-rails
+  sqlite3
+  uglifier
+  will_paginate

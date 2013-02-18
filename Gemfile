@@ -1,26 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
-
+gem 'rails'
 gem 'jquery-rails'
+
+
+#form builder
+gem 'formtastic'
+
+gem 'sqlite3'
+gem 'puma' #added for puma webserver support
 
 #for haml support
 gem 'haml'
 gem 'haml-rails'
 
-#form builder
-gem 'formtastic'
-gem 'simple_form'
+#pagination
+gem 'will_paginate'
 
-#group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-#end
+group :assets do
+
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.3.5'
-  gem 'puma' #added for puma webserver support
   gem 'debugger'
 
   #add a comment summarizing the current schema
