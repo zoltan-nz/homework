@@ -16,7 +16,7 @@ task :import => [:environment] do
 # If you have a row with _id, then this function use only integer value from this cells.
 
   def import_in_model(model, *symbols)
-    file = "db/#{model.to_s}s-2000.csv"
+    file = "db/#{model.to_s.downcase}s-2000.csv"
     print "Importing #{file}"
     counter = 0
 
