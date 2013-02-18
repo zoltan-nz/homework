@@ -7,7 +7,6 @@ gem 'jquery-rails'
 #form builder
 gem 'formtastic'
 
-gem 'sqlite3'
 gem 'puma' #added for puma webserver support
 
 #for haml support
@@ -38,4 +37,10 @@ group :development, :test do
   #for fancy console
   gem 'awesome_print'
   gem 'hirb'
+
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
