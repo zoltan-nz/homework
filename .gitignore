@@ -24,4 +24,4 @@
 /doc/TODO
 
 #Seed data files
-/db/*.csv
+#/db/*.csv
