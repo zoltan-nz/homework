@@ -4,18 +4,11 @@ class Search < ActiveRecord::Base
   #validates :n_guests, only_integer: true
 
   def results
-    @rooms ||= find_bookings
-  end
+    @start_date = self.s_date
+    @end_date = self.e_date
+    @number_of_guest = self.n_guests
 
-private
-
-  def find_bookings
-    start_date = self.s_date
-    end_date = self.e_date
-    number_of_guest = self.n_guests
-
-    @rooms ||= Room.includes(:bookings).where("(rooms.capacity - bookings.number_of_guests) >= 0")
-
+    @hosts = Host.available_hosts(@start_date, @end_date, @number_of_guest)
 
   end
 

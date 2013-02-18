@@ -1,5 +1,0 @@
-=@bookings.each do |booking|
-  %h2 #{booking.room.host.id}: #{booking.room.host.name}
-  %p #{booking.room.host.address}
-  -booking.room.host.rooms.each do |room|
-    %p room##{room.id}

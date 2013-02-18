@@ -48,12 +48,20 @@ Import data in production environment:
 
 ===Search form
 
-  rails g model search start_date:date end_date:date number_of_guests:integer
+Search with model:
+
+  rails g model search s_date:date e_date:date n_guests:integer
   rails g controller searches
 
+Logics implemented in models.
+
+Results use partial's view of models.
+
+
 ==TODO
-- Creating model, controller and views for search
 - Paginate results
+- Validation of search form
+- Bootstrap template install
 - Polishing documentation
 - Deploying to Heroku
 - Further tweaking

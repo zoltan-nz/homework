@@ -3,19 +3,12 @@ class SearchesController < ApplicationController
   def index
 
     @search = Search.new
-    @bookings = Booking.search(params[:search])
-
-    if params[:search]
-      @s_date = params[:search][:s_date].present? ? Date.parse(params[:search][:s_date]) : @s_date = ""
-      @e_date = params[:search][:e_date].present? ? Date.parse(params[:search][:e_date]) : @e_date = ""
-      @n_guests = params[:search][:n_guests].present? ? params[:search][:n_guests] : @n_guests = ""
-
-    end
 
   end
 
   def new
     @search = Search.new
+    @search.create_global_variables
   end
 
   def create
@@ -25,12 +18,16 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+    #@search.create_global_variables
+    @start_date = @search.s_date
+    @end_date = @search.e_date
+    @number_of_guest = @search.n_guests
   end
 
   def update
 
     @search = Search.find(params[:id])
-    render 'index'
+    redirect_to @search
   end
 
 end

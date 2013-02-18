@@ -1,0 +1,3 @@
+%h2 host##{host.id}: #{host.name}
+%h3 #{host.address}
+=render host.rooms.available_rooms(@start_date, @end_date, @number_of_guest, host.id)
