@@ -37,6 +37,10 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (2.3.0.0)
+      sass (~> 3.2)
+    bootstrap-will_paginate (0.0.9)
+      will_paginate
     builder (3.0.4)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -60,6 +64,9 @@ GEM
       multi_json (~> 1.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    formtastic-bootstrap (2.0.0)
+      formtastic (~> 2.2)
+      formtastic-bootstrap
     haml (4.0.0)
       tilt
     haml-rails (0.4)
@@ -140,9 +147,12 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  bootstrap-sass
+  bootstrap-will_paginate
   coffee-rails
   debugger
   formtastic
+  formtastic-bootstrap
   haml
   haml-rails
   hirb

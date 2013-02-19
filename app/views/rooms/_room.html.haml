@@ -1,1 +1,1 @@
-%p room##{room.id} #{is_available(@start_date, @end_date, room)} (#{room.num_of_bed_booked_in_period(@start_date, @end_date)} booked, #{room.free_in_a_period(@start_date, @end_date)} free out of #{room.capacity} total)
+%p room##{room.id} #{is_available(@start_date, @end_date, room)} (#{room.number_of_bed_booked_in_a_period(@start_date, @end_date)} booked, #{room.number_of_room_free_in_a_period(@start_date, @end_date)} free out of #{room.capacity} total)

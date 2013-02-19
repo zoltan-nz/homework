@@ -1,9 +1,7 @@
 -#=render 'search_form'
 
+%h3 Search Results
+%p.alert Start_date: #{@search.s_date}, End_date: #{@search.e_date}, Number_of_guests: #{@search.n_guests}
 
-%h1 Search Results
-%p Start_date: #{@search.s_date}
-%p End_date: #{@search.e_date}
-%p Number_of_guests: #{@search.n_guests}
-
-=render @search.results
+=render @hosts
+=will_paginate @pages

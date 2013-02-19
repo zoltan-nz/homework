@@ -55,13 +55,16 @@ Search with model:
 
 Logics implemented in models.
 
-Results use partial's view of models.
+Results use models' partials.
 
+===Test application is running on Heroku
+
+    http://desolate-journey-7350.herokuapp.com/
+
+===Pagination
+
+It is not ready! (Not working properly.)
 
 ==TODO
 - Paginate results
-- Validation of search form
-- Bootstrap template install
-- Polishing documentation
-- Deploying to Heroku
 - Further tweaking

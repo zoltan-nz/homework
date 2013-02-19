@@ -16,11 +16,18 @@ gem 'haml-rails'
 #pagination
 gem 'will_paginate'
 
+gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
+
+gem 'formtastic-bootstrap'
+
 group :assets do
 
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
+
+
 end
 
 

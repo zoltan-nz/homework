@@ -1,14 +1,28 @@
 !!!
 %html
   %head
-    %title Homework
-    = stylesheet_link_tag    "application", :media => "all"
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "Homework"
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = yield(:head)
   %body
+    %header.navbar.navbar-fixed-top
+      %nav.navbar-inner
+        .container
+          =link_to "Homework", :root, class: 'brand'
     %div.container
       -flash.each do |key, value|
         =content_tag(:div, value, class: "alert alert-#{key}")
-    = yield
-    %footer.container
-    =debug(params) if Rails.env.development?
+    #main{:role => "main"}
+      .container
+        .content
+          .row
+            .span12
+              -#= render 'layouts/messages'
+              = yield
+          %footer

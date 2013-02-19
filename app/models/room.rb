@@ -10,37 +10,31 @@ class Room < ActiveRecord::Base
 
   #default_scope order: 'rooms.host_id ASC'
 
+  #scope :number_of_bed_booked_scope, lambda {|day| self.includes(:bookings).where("? BETWEEN bookings.start_date AND bookings.end_date", day).bookings.select("number_of_guests")}
+
+  #Result: array - list of rooms where are free bed in a given period with given number of guests who need free room
   def self.available_rooms(start_date, end_date, number_of_guest, host)
     @rooms = []
     @room_query = Room.find_all_by_host_id(host)
     @room_query.each do |room|
-      @rooms << room if (room.free_in_a_period(start_date, end_date) >= number_of_guest)
+      @rooms << room if (room.number_of_room_free_in_a_period(start_date, end_date) >= number_of_guest)
     end
     @rooms
   end
 
+  #Result: boolean - true if room available in given period
   def available?(start_date, end_date)
-    self.free_in_a_period(start_date, end_date) > 0
+    self.number_of_room_free_in_a_period(start_date, end_date) > 0
   end
 
-    def number_of_bed_booked(date)
-    number_of_bed_booked = 0
-    self.bookings.each do |booking|
-       number_of_bed_booked += booking.number_of_guests.to_i if ((booking.start_date <= date) && (date <= booking.end_date))
-    end
-    number_of_bed_booked
+  #Result: integer - Max number of bed booked in a given period
+  def number_of_bed_booked_in_a_period(start_date, end_date)
+    self.bookings.max_number_of_bed_booked_in_a_period(start_date, end_date)
   end
 
-  def num_of_bed_booked_in_period(start_date, end_date)
-    booked = []
-    (start_date..end_date).each do |date|
-      booked << number_of_bed_booked(date)
-    end
-    booked.max
-  end
-
-  def free_in_a_period(start_date, end_date)
-     self.capacity - num_of_bed_booked_in_period(start_date, end_date)
+  #Result: integer - how many room free in given period
+  def number_of_room_free_in_a_period(start_date, end_date)
+     self.capacity - self.bookings.max_number_of_bed_booked_in_a_period(start_date, end_date)
   end
 
 end

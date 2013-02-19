@@ -1,15 +1,19 @@
 class Search < ActiveRecord::Base
   attr_accessible :e_date, :n_guests, :s_date
 
-  #validates :n_guests, only_integer: true
+  validates :e_date, :n_guests, :s_date, presence: true
 
-  def results
-    @start_date = self.s_date
-    @end_date = self.e_date
-    @number_of_guest = self.n_guests
+  def self.results(search, page)
+    @start_date = search.s_date
+    @end_date = search.e_date
+    @number_of_guest = search.n_guests
 
-    @hosts = Host.available_hosts(@start_date, @end_date, @number_of_guest)
+    @hosts = Host.available_hosts(@start_date, @end_date, @number_of_guest, page)
 
+  end
+
+  def to_param
+    "#{id}-#{s_date}-#{e_date}-#{n_guests}"
   end
 
 end
