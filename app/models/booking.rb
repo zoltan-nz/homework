@@ -14,7 +14,7 @@ class Booking < ActiveRecord::Base
 
   #Result: integer - a max number of how many bed booked in a period
   def self.max_number_of_bed_booked_in_a_period(sd, ed)
-    result = where("(:sd BETWEEN start_date AND end_date) OR (:ed BETWEEN start_date AND end_date)", sd: sd, ed: ed).maximum(:number_of_guests)
+    result = where("(:sd BETWEEN start_date AND end_date) OR (:ed BETWEEN start_date AND end_date) OR ((:sd < start_date) AND ( end_date < :ed))", sd: sd, ed: ed).maximum(:number_of_guests)
     result = 0 if result.nil?
     result
   end
