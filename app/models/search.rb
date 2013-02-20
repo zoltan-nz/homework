@@ -8,7 +8,7 @@ class Search < ActiveRecord::Base
     @end_date = search.e_date
     @number_of_guest = search.n_guests
 
-    @hosts = Host.available_hosts(@start_date, @end_date, @number_of_guest, page)
+    @hosts = Host.has_free_rooms_in_a_period(@start_date, @end_date, @number_of_guest).paginate(page: page, limit: 5)
 
   end
 
