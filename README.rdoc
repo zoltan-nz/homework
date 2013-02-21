@@ -66,5 +66,6 @@ Results use models' partials.
 It is not ready! (Not working properly.)
 
 ==TODO
+- Fixing and rebuilding models
 - Paginate results
-- Further tweaking
+- Building data input features
