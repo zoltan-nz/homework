@@ -2,6 +2,84 @@
 
 A test application which manage hosts, rooms and bookings.
 
+==TASK
+
+The purpose of this test is to build a simple Ruby on Rails application that allows
+to search for available rooms in host families.
+
+There are 3 files containing data that must be imported into the system:
+
+- hosts-2000.csv
+
+    List of host families defined by the following attributes:
+
+    ref: Unique identifier for that host
+    name: Name of the host
+    address: Address of the host
+
+- rooms-2000.csv
+
+    List of rooms for each one of the hosts, defined by the following attributes:
+
+    ref: Unique identifier for the room
+    host_ref: Identifier of the host the room belongs to
+    capacity: Number of people that can sleep in the room
+
+- bookings-2000.csv
+
+    List of bookings already made for the rooms, defined by:
+
+    ref: Unique identifier for the booking
+    room_ref: Identifier of the booked room
+    start_date: Start date of the booking with format 'yyyy-mm-dd'
+    end_date: End date of the booking with format 'yyyy-mm-dd'
+    number_of_guests: Number of guests staying in the room for that booking
+
+
+Deliver a Rails application including the following functionality:
+
+  * Rake task to import the files hosts-2000.csv, rooms-2000.csv and bookings-2000.csv
+  * Search the availability of hosts/rooms for a period with input fields:
+    - Start date: day, month and year
+    - End date: day, month and year
+    - Number of guests: integer
+
+    It should return a list of hosts which have rooms available for that period
+    and that number of guests (in the same room), showing which rooms are available
+    for that host and period and if those rooms already have any guests in any days within that period.
+
+For example, for the data provided in hosts-2000.csv, rooms-2000.csv and bookings-2000.csv:
+
+Search between 2012-06-01 and 2012-06-07 for 1 guest
+
+host#1: Mr Host 1
+1 Camden Street
+room#1 is available (1 booked, 1 free out of 2 total)
+room#2 is available (0 booked, 2 free out of 2 total)
+
+host#2: Mr Host 2
+2 Camden Street
+room#4 is available (0 booked, 2 free out of 2 total)
+
+host#3: Mr Host 3
+3 Camden Street
+room#5 is available (1 booked, 1 free out of 2 total)
+room#6 is available (0 booked, 2 free out of 2 total)
+
+host#4: Mr Host 4
+4 Camden Street
+room#8 is available (0 booked, 2 free out of 2 total)
+
+host#5: Mr Host 5
+5 Camden Street
+room#9 is available (1 booked, 1 free out of 2 total)
+room#10 is available (0 booked, 2 free out of 2 total)
+
+Paginate results, show 5 hosts per page.
+
+A description of how the problem was solved will be included with any possible considerations and instructions to
+run the application and load the data.
+
 == Comments
 
 ===Gemfile:
@@ -60,10 +138,6 @@ Results use models' partials.
 ===Test application is running on Heroku
 
     http://desolate-journey-7350.herokuapp.com/
-
-===Pagination
-
-It is not ready! (Not working properly.)
 
 ==TODO
 - Fixing and rebuilding models
