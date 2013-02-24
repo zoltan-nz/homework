@@ -10,6 +10,17 @@ class Room < ActiveRecord::Base
 
   #default_scope order: 'rooms.host_id ASC'
 
+  scope :free_in_a_period, lambda {
+      |sd,ed,num| includes(:bookings).
+       where("(rooms.capacity - :num -
+              (SELECT MAX(bookings.number_of_guests)
+                WHERE ((:sd BETWEEN start_date AND end_date) OR (:ed BETWEEN start_date AND end_date))
+                      OR ((:sd < start_date) AND ( end_date < :ed))
+                      )
+              )
+                    >= 0",
+              sd: sd, ed: ed, num: num)}
+
   #scope :number_of_bed_booked_scope, lambda {|day| self.includes(:bookings).where("? BETWEEN bookings.start_date AND bookings.end_date", day).bookings.select("number_of_guests")}
 
   #Result: array - list of rooms where are free bed in a given period with given number of guests who need free room
