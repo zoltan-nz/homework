@@ -140,6 +140,10 @@ Results use models' partials.
     http://desolate-journey-7350.herokuapp.com/
 
 ==TODO
-- Fixing and rebuilding models
+- Updating room model
+- Updating host model
 - Paginate results
-- Building data input features
+- Admin for host and home
+- Bulding user registration/login feature
+- Upgrading search function
+- Implementing booking feature
