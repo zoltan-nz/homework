@@ -147,3 +147,6 @@ Results use models' partials.
 - Bulding user registration/login feature
 - Upgrading search function
 - Implementing booking feature
+- Updating all app to Rails 4
+- Refactoring queries
+- Make more object oriented...
